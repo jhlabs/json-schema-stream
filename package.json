@@ -1,19 +1,23 @@
 {
   "name": "json-schema-stream",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "type-check": "tsc",
     "dev": "vitest",
     "test": "vitest run",
-    "ci": "pnpm type-check && pnpm test && pnpm build"
+    "ci": "pnpm type-check && pnpm test && pnpm build",
+    "release": "pnpm ci && changeset publish"
   },
   "keywords": [],
   "author": "Johannes Herrmann",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.27.5",
     "@types/node": "^20.14.5",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5",
