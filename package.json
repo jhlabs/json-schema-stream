@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "type-check": "tsc",
+    "dev": "vitest",
+    "test": "vitest run",
+    "ci": "pnpm type-check && pnpm test && pnpm build"
   },
   "keywords": [],
   "author": "Johannes Herrmann",
@@ -12,6 +16,7 @@
   "devDependencies": {
     "@types/node": "^20.14.5",
     "tsup": "^8.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }
